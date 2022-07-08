@@ -6,6 +6,7 @@ const form = document.querySelector('#form');
 
 const openFormModalBtn = document.querySelector('#open-form-modal-btn');
 const launchBtn = document.querySelector('#launch-btn');
+const heroesBtn = document.querySelector('#heroes-btn');
 const closeBtns = document.querySelectorAll('.close-btn');
 
 openFormModalBtn.addEventListener('click', () => {
@@ -24,7 +25,7 @@ const openSuccessModal = () => {
     successModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
 };
 
-closeBtns.forEach(btn => {
+heroesBtn.forEach(btn => {
     btn.addEventListener('click', e => {
         e.stopPropagation();
         closeFormModal();
@@ -32,6 +33,13 @@ closeBtns.forEach(btn => {
     })
 })
 
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.stopPropagation();
+        closeFormModal();
+        closeSuccessModal();
+    })
+})
 
 form.addEventListener('submit', e => {
     e.preventDefault();
