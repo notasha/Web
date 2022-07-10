@@ -6,7 +6,6 @@ const form = document.querySelector('#form');
 
 const openFormModalBtn = document.querySelector('#open-form-modal-btn');
 const launchBtn = document.querySelector('#launch-btn');
-// const heroesBtn = document.querySelector('#heroes-btn');
 const closeBtns = document.querySelectorAll('.close-btn');
 
 openFormModalBtn.addEventListener('click', () => {
@@ -56,4 +55,3 @@ form.addEventListener('submit', e => {
       })
       .catch((error) => console.log('Sending form failed'));
 })
-
