@@ -6,7 +6,7 @@ const form = document.querySelector('#form');
 
 const openFormModalBtn = document.querySelector('#open-form-modal-btn');
 const launchBtn = document.querySelector('#launch-btn');
-const heroesBtn = document.querySelector('#heroes-btn');
+// const heroesBtn = document.querySelector('#heroes-btn');
 const closeBtns = document.querySelectorAll('.close-btn');
 
 openFormModalBtn.addEventListener('click', () => {
@@ -25,12 +25,12 @@ const openSuccessModal = () => {
     successModal.classList.add(MODAL_ACTIVE_CLASS_NAME);
 };
 
-heroesBtn.forEach(btn => {
-    btn.addEventListener('click', e => {
-        e.stopPropagation();
-        closeSuccessModal();
-    })
-})
+window.onload = () => {
+    document.querySelector('#heroes-btn').onclick = function() {
+      this.parentNode.remove()
+      return false;
+    };
+  };
 
 closeBtns.forEach(btn => {
     btn.addEventListener('click', e => {
